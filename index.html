@@ -53,10 +53,9 @@
           return;
         }
 
-        // get studentId from URL ?student_id=abc123
         const urlParams = new URLSearchParams(window.location.search);
-        //   const studentId = urlParams.get('student_id');
-        const studentId = "dummy-student-123";
+        const studentId = urlParams.get("student_id");
+
         if (!studentId) {
           statusEl.textContent = "❌ Missing student ID in link.";
           return;
@@ -79,7 +78,6 @@
           );
 
           const data = await res.json();
-          console.log(data)
           if (res.ok) {
             statusEl.textContent = "✅ Upload successful!";
           } else {

@@ -80,6 +80,7 @@
           const data = await res.json();
           if (res.ok) {
             statusEl.textContent = "✅ Upload successful!";
+            fileInput.value = "";
           } else {
             statusEl.textContent =
               "❌ Upload failed: " + (data.error || "Unknown error");
